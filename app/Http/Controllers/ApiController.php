@@ -17,7 +17,7 @@ class ApiController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->exect('apiTest');
+        $this->middleware('auth')->except('apiTest');
     }
 
 
