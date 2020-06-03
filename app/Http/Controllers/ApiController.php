@@ -59,7 +59,7 @@ class ApiController extends Controller
 
 
     public function apiTest() {
-
+        echo 'working';
     }
 
 }

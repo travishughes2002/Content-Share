@@ -28,6 +28,6 @@ class ApiKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('api_keys');
     }
 }
