@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function apiKeys() {
         return $this->hasMany('App\Apikeys');
     }
+
+    public function domains() {
+        return $this->hasMany('App\Domains');
+    }
 }

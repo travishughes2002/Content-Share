@@ -21,10 +21,6 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-// Route::get('/settings', function () {
-//     return view('settings');
-// });
-
 Auth::routes();
 
 // Upload stuff
@@ -40,3 +36,7 @@ Route::get('/settings', 'SettingsController@viewSettingsPage');
 Route::post('/settings/api/create', 'ApiController@createApiKey');
 Route::get('/settings/api/delete/{id}', 'ApiController@deleteApiKey');
 Route::get('/api/test', 'ApiController@apiTest')->middleware('ApiAuthentication');
+
+// Custom Domain stuff
+Route::post('/settings/domain/add', 'DomainsController@addDomain');
+Route::get('/settings/domain/delete/{id}', 'DomainsController@deleteDomain');

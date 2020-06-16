@@ -19,37 +19,50 @@ class ApiAuthentication
     {
         $token = $request->header('APP_KEY');
 
-        $api_keys = Apikeys::all();
-        
-        // $api_keys = compact('api_keys');
+        $apiKeys = Apikeys::all();
 
-        // echo $api_keys;
+        // for(i == 0; i < yourarray.length; i++){
+        //     if(yourarray[i].key == yourcomparevarible){
+        //     //   Do something if its the same
+        //     }
+        // }
+
+
+        for($i = 0; $i <= count($apiKeys->key); $i++) {
+            echo 'yay work';
+        }
+
+
+        // for ($x = 0; $x <= count($apiKeys); $x++) {
+        //     echo "The number is: $x <br>";
+        // }
+      
+
+
 
         // dd($api_keys);
 
+        // echo '|';
+        // echo 'ApiKeys Raw:' . $apiKeys;
+        // echo '|';
         
-        // if(in_array($token, $api_keys)){
-        //     // return response()->json(['message' => '401, Unauthorized.'], 401);
-        //     echo 'no work :(';
+        // echo '|';
+        // echo 'token:' . $token;
+        // echo '|';
+
+        // foreach($apiKeys as $apiKey) {
+        //     echo '|';
+        //     echo 'keys:' . $apiKey->key;
+        //     echo '|';
+
+        //     if($token == $apiKey->key){
+        //         break;
+        //         echo 'work';
+        //     }
+        //     else {
+        //         return response()->json(['message' => '401, Unauthorized.'], 401);
+        //     }
         // }
-        
-        echo '<p>';
-        echo 'key:' . $token;
-        echo '</p>';
-
-        foreach($api_keys as $api_key) {
-            echo '<p>';
-            echo $api_key->key;
-            echo '</p>';
-
-            // if($token == $api_key->key){
-            //     break;
-            //     echo 'work';
-            // }
-            // else {
-            //     return response()->json(['message' => '401, Unauthorized.'], 401);
-            // }
-        }
 
         // if($token != ''){
         //     return response()->json(['message' => 'Unauthorized.'], 401);

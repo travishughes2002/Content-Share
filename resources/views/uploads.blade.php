@@ -18,8 +18,13 @@
                                 <img style="max-width: 100%;" src="{{ url('/', $image->pathname) }}" alt="404">
                             </td>
                             <td style="width: 50%;">
-                                Full path: <a href="{{ url('/', $image->pathname) }}" target="_blank">{{ url('/', $image->pathname) }}</a>
-                                Shortcode: <a href="{{ url('/i', $image->slug) }}" target="_blank">{{ url('/i', $image->slug) }}</a>
+                                <ul>
+                                    <li>Full path: <a href="{{ url('/', $image->pathname) }}" target="_blank">{{ url('/', $image->pathname) }}</a></li>
+                                    <li>Shortcode: <a href="{{ url('/i', $image->slug) }}" target="_blank">{{ url('/i', $image->slug) }}</a></li>
+                                    @foreach ($domains as $domain)
+                                        <li>Custom Domain: <a href="{{ 'https', $domain->domain, '/i', $image->slug}}" target="_blank">{{ 'https://', $domain->domain, '/i', $image->slug }}</a></li>
+                                    @endforeach
+                                </ul>
                             </td>
                             <th style="width: 5%;">
                                 <a class="btn btn-danger text-white" href="{{ url('/uploads/delete', $image->id) }}">Delete</a>

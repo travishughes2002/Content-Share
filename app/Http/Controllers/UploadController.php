@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Images;
 use App\User;
+use App\Domains;
 
 class UploadController extends Controller
 {
@@ -62,9 +63,10 @@ class UploadController extends Controller
     {
         // Gets images using specific user id.
         $images = Images::all()->where('user_id', auth()->user()->id);
+        $domains = Domains::all()->where('user_id', auth()->user()->id);
 
         // Returns view with images
-        return view('uploads', compact('images'));
+        return view('uploads', compact('images', 'domains'));
     }
 
 
