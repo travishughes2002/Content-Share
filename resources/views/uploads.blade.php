@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container mt-3">
-            <h1 class="mb-3 text-center">Your Uploads</h1>
-            <table class="table">
+        <h1 class="mb-3 text-center">Your Uploads</h1>
+        <table class="table">
                 <thead>
                     <tr>
                         <th>Image</th>
@@ -27,11 +27,16 @@
                                 </ul>
                             </td>
                             <th style="width: 5%;">
-                                <a class="btn btn-danger text-white" href="{{ url('/uploads/delete', $image->id) }}">Delete</a>
+                                {{-- <a class="btn btn-danger text-white" onclick="return confirm('Are you sure?')" href="{{ url('/uploads/delete', $image->id) }}">Delete</a> --}}
+                                <form action="{{ url('/uploads/delete', $image->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger text-white" type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                                </form>
                             </th>
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+        </table>
     </div>
 @endsection

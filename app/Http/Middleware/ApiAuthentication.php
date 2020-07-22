@@ -21,25 +21,15 @@ class ApiAuthentication
 
         $apiKeys = Apikeys::all();
 
-        // for(i == 0; i < yourarray.length; i++){
-        //     if(yourarray[i].key == yourcomparevarible){
-        //     //   Do something if its the same
-        //     }
-        // }
+        echo $apiKeys->key;
 
-
-        for($i = 0; $i <= count($apiKeys->key); $i++) {
-            echo 'yay work';
+        for($i = 0; $i <= count($apiKeys); $i++) {
+            if($apiKeys->key == $token) {
+                echo 'Works';
+            break;
+            }
         }
-
-
-        // for ($x = 0; $x <= count($apiKeys); $x++) {
-        //     echo "The number is: $x <br>";
-        // }
       
-
-
-
         // dd($api_keys);
 
         // echo '|';

@@ -27,7 +27,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::post('/upload', 'UploadController@store');
 Route::get('/uploads', 'UploadController@viewUploads');
-Route::get('/uploads/delete/{id}', 'UploadController@deleteImage');
+Route::delete('/uploads/delete/{id}', 'UploadController@deleteImage');
 Route::get('/i/{slug}', 'UploadController@viewImageViaSlug');
 
 Route::get('/settings', 'SettingsController@viewSettingsPage');

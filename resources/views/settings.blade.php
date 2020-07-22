@@ -51,9 +51,13 @@
         <div class="card mb-5">
             <div class="card-header">
                 <h2 class="mb-0">Custom Domains</h2>
-                <p class="mb-0">You can use this to add your own domains, for example https://images.travishughes.net is a custom domain</p>
+                <p class="mb-0">You can use this to add your own domains, for example https://images.jhondoe.net is a custom domain</p>
             </div>
             <div class="card-body">
+                <div class="alert alert-danger">
+                    <h3>Imporant</h3>
+                    <p>In order to use this feature you'll need to create a CNAME on your domain that points to the origin domain. You'll also need to manually route the domain to the correct website.</p>
+                </div>
                 @if (count($domains) > 0)
                     <table class="table">
                         <thead>
