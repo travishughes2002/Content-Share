@@ -1,0 +1,40 @@
+.notifications {
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 400px;
+    margin-left: auto;
+    padding: 1rem;
+    position: absolute;
+}
+
+.msg {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    position: relative;
+    
+    strong {
+        line-height: 1;
+        font-weight: 300;
+    }
+
+    i {
+        margin-left: auto;
+        position: absolute;
+        right: 7px;
+        cursor: pointer;
+    }
+
+    &__close-btn {
+        transition: 0.3s;
+    }
+}
+
+.error {
+    background-color: $red;
+}

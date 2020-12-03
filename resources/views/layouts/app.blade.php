@@ -23,7 +23,19 @@
                     <a href="{{ route('login') }}">Login</a>
                     <a href="{{ route('register') }}">Register</a>
                 @else
-                    <a>{{ Auth::user()->name }}</a>
+                    
+                    <div class="dropdown">
+                        <div class="dropdown__toggle">
+                            <span>{{ Auth::user()->name }}</span>
+                        </div>
+                        <div class="dropdown__content">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                 @endguest
             </div>
         </div>

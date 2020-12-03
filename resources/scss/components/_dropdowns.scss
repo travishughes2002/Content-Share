@@ -1,0 +1,37 @@
+.dropdown {
+    position: relative;
+
+    &__toggle {
+        span {
+            &::after {
+                @include pesudo-icon-base;
+                content: '\f078';
+                margin-left: 0.5rem;
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+        background-color: $bg-secondry;
+        position: absolute;
+        padding: 1rem;
+        min-width: 150px;
+    }
+
+    &:hover {
+        .dropdown__content {
+            display: block;
+        }
+
+        .dropdown__toggle {
+            span {
+                &::after {
+                    @include pesudo-icon-base;
+                    content: '\f077';
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+}

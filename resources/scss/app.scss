@@ -1,9 +1,13 @@
 @import '_var.scss';
+@import '_classes-mixins.scss';
 
 @import 'layouts/_header.scss';
 
 @import 'pages/_upload.scss';
 @import 'pages/_auth.scss';
+
+@import 'components/_msg-boxs.scss';
+@import 'components/_dropdowns.scss';
 
 // Prefixs
 
@@ -74,7 +78,7 @@ form {
         padding: 0.3rem;
         border: 1px solid $light-gray2;
         border-radius: 5px;
-        color: $light-gray;
+        color: $light-gray2;
 
         &:focus {
             border: 1px solid $black;
@@ -94,7 +98,7 @@ form {
         padding: 0.3rem;
         border: 1px solid $light-gray2;
         font-family: $font-reboto;
-        color: $light-gray;
+        color: $light-gray2;
         resize: vertical;
         
         &:focus {
@@ -135,29 +139,6 @@ form {
             margin: 0 0.3rem 0 0;
         }
     }
-}
-
-// Generic classes and mixins
-
-.wrapper {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1080px;
-
-    @media only screen and (max-width: 1080px) {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-}
-
-@mixin pesudo-icon-base {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;    
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
 }
 
 .btn-primary {
