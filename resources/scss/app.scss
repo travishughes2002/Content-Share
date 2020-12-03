@@ -1,0 +1,209 @@
+@import '_var.scss';
+
+@import 'layouts/_header.scss';
+
+@import 'pages/_upload.scss';
+@import 'pages/_auth.scss';
+
+// Prefixs
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: $font-reboto;
+    color: $light-gray2;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, hr {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+h3 {
+    margin-bottom: 1rem
+}
+
+a {
+    text-decoration: none;
+    color: $light-gray2;
+
+    &:hover {
+        color: $purple;
+    }
+}
+
+button {
+    background-color: unset;
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+hr {
+    border: 1px solid $purple;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+form {
+    label {
+        font-size: 1.1rem;
+        display: block;
+        color: $light-gray;
+        margin-bottom: 0.1rem;
+    }
+
+    input {
+        background-color: unset;
+        width: 100%;
+        font-size: 1.3rem;
+        display: block;
+        box-sizing: border-box;
+        padding: 0.3rem;
+        border: 1px solid $light-gray2;
+        border-radius: 5px;
+        color: $light-gray;
+
+        &:focus {
+            border: 1px solid $black;
+            outline: unset;
+        }
+    }
+
+    input[type="checkbox"] {
+        width: unset;
+    }
+
+    textarea {
+        background-color: unset;
+        width: 100%;
+        font-size: 1rem;
+        box-sizing: border-box;
+        padding: 0.3rem;
+        border: 1px solid $light-gray2;
+        font-family: $font-reboto;
+        color: $light-gray;
+        resize: vertical;
+        
+        &:focus {
+            border: 1px solid $black;
+            outline: unset;
+        }
+    }
+
+    .field-group {
+        margin-bottom: 1rem;
+
+        &__cols {
+            display: flex;
+        }
+
+        &__row {
+            width: 50%;
+            margin: 0 0.5rem 0 0.5rem;
+
+            &:nth-child(1) {
+                margin-left: 0;
+            }
+
+            &:nth-last-child(1) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .checkbox-wrap {
+        display: flex;
+
+        label {
+            margin: auto 0;
+        }
+
+        input {
+            margin: 0 0.3rem 0 0;
+        }
+    }
+}
+
+// Generic classes and mixins
+
+.wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1080px;
+
+    @media only screen and (max-width: 1080px) {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@mixin pesudo-icon-base {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;    
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.btn-primary {
+    background-color: $purple;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $dark-purple;
+        color: $white;
+        
+    }
+
+    &::after {
+        content: '\f0a9';
+        @include pesudo-icon-base;
+        padding-left: 0.5rem;
+    }
+}
+
+.btn-secondrey {
+    background-color: $dark-gray;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-gray;
+        color: $white;
+        
+    }
+
+    &::after {
+        content: '\f0a9';
+        @include pesudo-icon-base;
+        padding-left: 0.5rem;
+    }
+}
