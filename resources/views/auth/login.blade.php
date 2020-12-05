@@ -34,19 +34,4 @@
             </form>
         </div>
     </main>
-
-    <div class="notifications">
-            @error('email')
-                <span class="msg error">
-                    <strong>{{ $message }}</strong>
-                    <i class="fas fa-times msg__close-btn" onclick="this.parentElement.style.display='none';"></i>
-                </span>
-            @enderror
-            @error('password')
-                <span class="msg error">
-                    <strong>{{ $message }}</strong>
-                    <i class="fas fa-times msg__close-btn" onclick="this.parentElement.style.display='none';"></i>
-                </span>
-            @enderror
-    </div>
 @endsection
