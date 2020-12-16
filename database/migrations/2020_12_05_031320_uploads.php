@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Images extends Migration
+class Uploads extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Images extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('uploads', function (Blueprint $table) {
             $table->id();
-            $table->text('pathname');
+            $table->text('path_name');
             $table->text('slug');
             $table->bigInteger('user_id');
         });
@@ -28,6 +28,6 @@ class Images extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('uploads');
     }
 }

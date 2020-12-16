@@ -11,4 +11,6 @@
             <h1>Upload Image</h1>
         </div>
     </main>
+
+    @include('includes.file-drop')
 @endsection

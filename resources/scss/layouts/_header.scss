@@ -1,3 +1,7 @@
+.header-spacer {
+    height: 9.8vh;
+}
+
 .header {
     width: 100%;
     padding: 2rem 0;
@@ -30,6 +34,7 @@
         margin-right: 3rem;
         font-size: 1.2rem;
         font-weight: 600;
+        text-transform: uppercase;
     }
 
     &__left-nav {
@@ -37,7 +42,6 @@
             margin-right: 1rem;
             font-size: 0.9rem;
             font-weight: 200;
-            text-transform: uppercase;
         }
     }
 

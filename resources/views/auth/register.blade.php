@@ -7,6 +7,7 @@
 @section('content')
 <main class="auth">
     <div class="auth__inner">
+        <h1>Register</h1>
         <form action="{{ route('register') }}" method="POST">
             @csrf
             <div class="field-group">
@@ -23,6 +24,9 @@
             </div>
             <div class="field-group">
                 <button class="btn-primary" type="submit">Register</button>
+            </div>
+            <div class="field-group auth-register__login">
+                <a href="{{ route('login') }}">Login Instead</a>
             </div>
         </form>
     </div>

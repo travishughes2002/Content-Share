@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UploadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,10 @@ Route::redirect('/', 'upload');
 
 Auth::routes();
 
+Route::get('/uploads', [UploadsController::class, 'index']);
 Route::get('/upload', [PagesController::class, 'upload']);
+Route::post('/upload/store', [UploadsController::class, 'store']);
+Route::delete('/upload/delete/{id}', [UploadsController::class, 'delete']);
+Route::get('/s/{slug}', [UploadsController::class, 'view']);
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

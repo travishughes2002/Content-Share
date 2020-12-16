@@ -7,6 +7,7 @@
 @section('content')
     <main class="auth">
         <div class="auth__inner">
+            <h1>Login</h1>
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="field-group">
@@ -14,9 +15,6 @@
                 </div>
                 <div class="field-group">
                     <input name="password" placeholder="Password" type="password" required autocomplete="current-password">
-                </div>
-                <div class="field-group">
-                    <button class="btn-primary" type="submit">Login</button>
                 </div>
                 <div class="field-group">
                     <div class="field-group__cols">
@@ -30,6 +28,12 @@
                             <a href="{{ route('password.request') }}">Reset</a>
                         </div>
                     </div>
+                </div>
+                <div class="field-group auth__submit-btn">
+                    <button class="btn-primary" type="submit">Login</button>
+                </div>
+                <div class="field-group auth-login__register">
+                    <a href="{{ route('register') }}">Register</a>
                 </div>
             </form>
         </div>

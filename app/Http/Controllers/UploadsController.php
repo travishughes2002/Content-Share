@@ -3,10 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Images;
+use Illuminate\Support\Str;
+use App\Models\Uploads;
 
+/**
+ * UploadsController
+ * 
+ * This controllers all the handling of the upload functions of the application like 
+ * uploading, deleting, indexing etc.
+ */
 class UploadsController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    /**
+     * Index
+     * 
+     * This gets all the uploads with the assosiated user and returns then in a view.
+     */
+    public function index()
+    {
+        // Gets images using specific user id.
+        $uploads = Uploads::all()->where('user_id', auth()->user()->id);
+
+        // Returns view with images
+        return view('pages.uploads', compact('uploads'));
+    }
+
+
     /**
      * Store
      * 
@@ -14,33 +42,55 @@ class UploadsController extends Controller
      */
     public function store(Request $request)
     {
+        // return dd(request()->all());
         // This checks the inputed data to make sure its vaid. It checks if theres been
         // anything inputed then makes sure its an image.
         $validatedData = $request->validate([
-            'image' => ['required', 'image', 'mimes:jpeg,png,gif,jpg'],
-            'video' => ['required', 'video', 'mimes:mp3,mp4,avi,ogg,wmv']
+            'file' => ['required', 'mimes:jpeg,png,gif,jpg,mp3,mp4,avi,ogg,wmv']
         ]);
         
         // This stores the image. It takes the $request (inputed data) and stores it in
         // the image disk under the user id.
-        if($request->image)
-        {
-            $contentPath = $request->image->store('images/'.auth()->user()->id);
-        }
-        else
-        {
-            $contentPath = $request->video->store('videos/'.auth()->user()->id);
-        }
-        
-        //$slug = str_replace(array('.jpeg', '.png', '.gif', '.jpg', 'images/', auth()->user()->id . '/'), '', $imagePath);
+        $filePath = $request->file->store('public/files/' . auth()->user()->id);
         
         // This creates the database entery.
-        Images::create([
-            'pathname' => $contentPath,
+        Uploads::create([
+            'path_name' => str_replace('public/', '', $filePath),
             'slug' => Str::random(10),
             'user_id' => auth()->user()->id
         ]);
         
-        return redirect('/upload');
+        return redirect()->back();
+    }
+
+
+    /**
+     * View
+     * 
+     * Using the slug this will return an upload
+     */
+    public function view($slug)
+    {
+        $file = Uploads::where('slug', $slug)->first();
+
+        return response()->file($file->path_name);
+    }
+
+
+    /**
+     * Delete
+     * 
+     * This deletes the submitted image.
+     */
+    public function delete($id)
+    {
+        $upload = Uploads::find($id);
+
+        if($image) {
+            Storage::delete($upload->path_name);
+        }
+
+        $upload->delete();
+        return redirect('/uploads');
     }
 }

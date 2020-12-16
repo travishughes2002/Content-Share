@@ -13,13 +13,24 @@
     background-position: center center;
     background-size: cover;
 
+    .field-group {
+        margin-bottom: 2rem;
+    }
+
     &__inner {
         width: 350px;
-    }
-}
+        background-image: radial-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.8));
+        padding: 2rem;
 
-.btn-primary {
-    width: 100%;
+        h1 {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
 }
 
 
@@ -41,6 +52,26 @@
             text-align: right;
             color: $light-gray2;
             font-size: 0.8rem;
+        }
+    }
+
+    &__register {
+        a {
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
+/*
+    Register
+*/
+
+.auth-register {
+    &__login {
+        a {
+            text-align: center;
+            display: block;
         }
     }
 }

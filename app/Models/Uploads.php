@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Images extends Model
+class Uploads extends Model
 {
     use HasFactory;
 
     // Mass asignable feilds.
-    protected $fillable = ['pathname', 'slug', 'user_id'];
+    protected $fillable = ['path_name', 'slug', 'user_id'];
 
     // Disables timestamps which is enabled by illuminate by default.
     public $timestamps = false;
 
     // The table this model is for.
-    protected $table = "images";
+    protected $table = "uploads";
 
     // Gets the associated user
     public function user() {
