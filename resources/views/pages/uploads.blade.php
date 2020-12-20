@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="header-spacer"></div>
     <main class="uploads">
-        <div class="wrapper">
-            @if (count($uploads) > 0)
-                @foreach ($uploads as $upload)
+        @if (count($uploads) > 0)
+            <div class="header-spacer"></div>
+            <div class="wrapper">
+            @foreach ($uploads as $upload)
 
 
                     <div class="uploads__item">
@@ -20,8 +20,8 @@
                                 <small>some text</small>
                                 <div class="uploads__item-overlay-actions">
                                     <a href="{{ url($upload->path_name) }}" target="_blank">View</a>
-                                    <a href="">Copy Link</a>
-                                    <a href="{{ url('/upload/delete', $upload->id) }}" onclick="event.preventDefault(); return confirm('Are you sure?'); document.getElementById('upload-item-{{ $upload->id }}').submit();">Delete</a>
+                                    <a class="clipboard-copy-btn" href="{{ url($upload->path_name) }}">Copy</a>
+                                    <a href="{{ url('/upload/delete', $upload->id) }}" onclick="event.preventDefault(); document.getElementById('upload-item-{{ $upload->id }}').submit();">Delete</a>
                                     
                                     <form id="upload-item-{{ $upload->id }}" action="{{ url('/upload/delete', $upload->id) }}" method="POST">
                                         @csrf
@@ -35,10 +35,15 @@
 
 
                 @endforeach
-            @else
-                <h1>You don't have any uploads at this current time.</h1>
-            @endif
-        </div>
+            </div>
+        @else
+            <div class="uploads__no-content">
+                <div class="uploads__no-content-inner">
+                    <i class="fas fa-file-excel"></i>
+                    <h1>You have not uploaded anything yet</h1>
+                </div>
+            </div>
+        @endif
     </main>
 
     @include('includes.file-drop')

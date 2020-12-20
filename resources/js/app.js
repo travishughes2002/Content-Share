@@ -10,10 +10,9 @@ $(document).ready(function() {
     window.addEventListener("dragover",function(e) {
         e.preventDefault();
         $('.file-drop').addClass('file-drop-toggled');
-        console.log("working!");
     });
     
-    $('.drop-container').on('dragleave', function(e){
+    $('.drop-container').on('dragleave', function(e) {
         $('.file-drop').removeClass('file-drop-toggled');
     });
 
@@ -23,5 +22,18 @@ $(document).ready(function() {
         var file = e.originalEvent.dataTransfer.files;
         $(this).find('#file-input').prop("files", file);
         $(this).find('#file-drop-form').submit();
+    });
+
+
+    /*
+        Copy to Clipboard
+    */
+    $('.clipboard-copy-btn').click(function(e) {
+        e.preventDefault();
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(this).prop('href')).select();
+        document.execCommand("copy");
+        $temp.remove();
     });
 });

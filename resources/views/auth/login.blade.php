@@ -38,4 +38,22 @@
             </form>
         </div>
     </main>
+
+    <div class="notifications">
+        @error('name')
+            <span class="msg error">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+        @error('email')
+            <span class="msg error">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+        @error('password')
+            <span class="msg error">
+                <strong>{{ $message }}</strong>
+            </span>
+        @enderror
+</div>
 @endsection

@@ -1,0 +1,14 @@
+.footer {
+    text-align: center;
+    padding: 1rem;
+
+    strong {
+        font-weight: 100;
+    }
+
+    @media only screen and (max-height: 101vh) {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}

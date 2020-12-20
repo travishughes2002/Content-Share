@@ -75,6 +75,7 @@ hr {
 img {
   width: 100%;
   height: auto;
+  background-position: center center;
 }
 
 form label {
@@ -219,6 +220,23 @@ form .checkbox-wrap input {
     Mobile Menu
 */
 
+.footer {
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer strong {
+  font-weight: 100;
+}
+
+@media only screen and (max-height: 101vh) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
 .upload {
   display: flex;
   justify-content: center;
@@ -294,6 +312,23 @@ form .checkbox-wrap input {
 
 .uploads__item-overlay-actions a:nth-child(3) {
   margin: 0 5px 5px 3px;
+}
+
+.uploads__no-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.uploads__no-content-inner {
+  text-align: center;
+}
+
+.uploads__no-content-inner i {
+  font-size: 3rem;
+  color: #e62c62;
 }
 
 /*

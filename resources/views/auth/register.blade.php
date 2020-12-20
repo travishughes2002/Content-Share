@@ -26,27 +26,9 @@
                 <button class="btn-primary" type="submit">Register</button>
             </div>
             <div class="field-group auth-register__login">
-                <a href="{{ route('login') }}">Login Instead</a>
+                <a href="{{ route('login') }}">Login Instead </a>
             </div>
         </form>
     </div>
 </main>
-
-<div class="notifications">
-        @error('name')
-            <span class="msg error">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-        @error('email')
-            <span class="msg error">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-        @error('password')
-            <span class="msg error">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-</div>
 @endsection
