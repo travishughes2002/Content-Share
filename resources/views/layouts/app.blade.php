@@ -22,6 +22,7 @@
                 <span class="header__left-nav">
                     <a href="{{ url('upload') }}">Upload</a>
                     <a href="{{ url('uploads') }}">View Uploads</a>
+                    <a href="{{ url('settings') }}">Settings</a>
                 </span>
             </div>
             <div class="header__right">

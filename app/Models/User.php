@@ -40,4 +40,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Gets relationships
+    public function uploads() {
+        return $this->belongsToMany(Uploads::class);
+    }
+
+    public function apiKeys() {
+        return $this->belongsToMany(ApiKeys::class);
+    }
 }

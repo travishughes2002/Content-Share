@@ -42,11 +42,19 @@ hr {
   font-weight: 300;
 }
 
+h1 {
+  font-weight: 100;
+}
+
 h2 {
   margin-bottom: 1rem;
 }
 
 h3 {
+  margin-bottom: 1rem;
+}
+
+p {
   margin-bottom: 1rem;
 }
 
@@ -158,6 +166,22 @@ form .checkbox-wrap label {
 
 form .checkbox-wrap input {
   margin: 0 0.3rem 0 0;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+table tr th {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+}
+
+table tr td {
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgray;
 }
 
 .header-spacer {
@@ -396,6 +420,18 @@ form .checkbox-wrap input {
   display: block;
 }
 
+.settings__head {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.settings__body {
+  width: 100%;
+  background-color: #0d0d0d;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
 .notifications {
   left: 0;
   top: 0;
@@ -435,6 +471,101 @@ form .checkbox-wrap input {
 
 .error {
   background-color: #cc2d2f;
+}
+
+.msg-box-lg {
+  text-align: center;
+  display: block;
+  width: 700px;
+  box-shadow: 1px 1px 5px black;
+  box-sizing: 0px 0px 5px black;
+}
+
+.msg-box-lg__wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg-box-lg__content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px 10px 0 0;
+  color: black;
+}
+
+.msg-box-lg__content i {
+  font-size: 3rem;
+  color: #2b2f3c;
+}
+
+.msg-box-lg__content h2 {
+  font-size: 2rem;
+}
+
+.msg-box-lg__copy-box {
+  width: 100%;
+  display: flex;
+}
+
+.msg-box-lg__copy-box input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+  border-radius: 5px 0 0 5px;
+  text-align: center;
+}
+
+.msg-box-lg__copy-box input:hover {
+  border: 1px solid black;
+}
+
+.msg-box-lg__copy-box input:focus {
+  border: 1px solid black;
+  outline: unset;
+}
+
+.msg-box-lg__copy-box button {
+  border-radius: 0 5px 5px 0;
+  background-color: lightgray;
+  padding: 0.5rem;
+}
+
+.msg-box-lg__copy-box button i {
+  font-size: 1.5rem;
+  color: #2b2f3c;
+}
+
+.msg-box-lg__copy-box button:hover {
+  cursor: pointer;
+  background-color: #0d0d0d;
+}
+
+.msg-box-lg__copy-box button:hover i {
+  color: white;
+}
+
+.msg-box-lg__btn {
+  background-color: #e62c62;
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.msg-box-lg__btn:hover {
+  background-color: #c93457;
+  cursor: pointer;
 }
 
 .dropdown {
@@ -478,7 +609,7 @@ form .checkbox-wrap input {
 }
 
 .file-drop {
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   box-sizing: border-box;
@@ -488,11 +619,11 @@ form .checkbox-wrap input {
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   display: none;
   padding: 5rem;
+  overflow: hidden;
 }
 
 .file-drop form {

@@ -1,5 +1,5 @@
 .file-drop {
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.9);
     color: $white;
     box-sizing: border-box;
@@ -9,11 +9,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     display: none;
     padding: 5rem;
+    overflow: hidden;
 
     form {
         display: none;

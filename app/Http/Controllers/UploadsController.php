@@ -74,7 +74,9 @@ class UploadsController extends Controller
     {
         $file = Uploads::where('slug', $slug)->first();
 
-        return response()->file($file->path_name);
+        // return $file;
+
+        return Storage::get($file->path_name);
     }
 
 
