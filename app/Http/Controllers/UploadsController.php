@@ -57,7 +57,7 @@ class UploadsController extends Controller
         
         // This creates the database entery.
         Uploads::create([
-            'path_name' => str_replace('public/', $filePath),
+            'path_name' => str_replace('public/', '', $filePath),
             'slug' => Str::random(10),
             'user_id' => auth()->user()->id
         ]);
@@ -75,8 +75,8 @@ class UploadsController extends Controller
     {
         $file = Uploads::where('slug', $slug)->first();
 
-        // return Storage::get(storage_path('app/public/') . $file->path_name);
-        return Storage::get(realpath(storage_path('app/public')) . '/' . $file->path_name);
+        return response()->file(storage_path('app/public/') . $file->path_name);
+
     }
 
 
