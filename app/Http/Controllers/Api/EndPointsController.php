@@ -20,12 +20,23 @@ class EndPointsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth.api');
+        $this->middleware('auth.api')->except('info');
+    }
+
+    
+    /**
+     * Info
+     * 
+     * This is a test page that will display the status and other information about the API.
+     */
+    public function info()
+    {
+        return response()->json(['name' => 'Content Share', 'status' => '200'], 200);
     }
 
 
     /**
-     * Store
+     * Store Uploads
      * 
      * This stores the submitted file and stores an entery in the database.
      */

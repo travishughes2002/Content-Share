@@ -104,11 +104,12 @@ $(document).ready(function () {
     e.preventDefault();
     $('.file-drop').addClass('file-drop-toggled');
     $('body').css('overflow', 'hidden');
-  });
-  $('.drop-container').on('dragleave', function (e) {
-    $('.file-drop').removeClass('file-drop-toggled');
-    $('body').css('overflow', 'hidden');
-  }); // This detects when the image has been dropped, adds the data to the form input and submits it.
+  }); // $('.drop-container').on('dragleave', function(e) {
+  //     console.log('working');
+  //     $('.file-drop').removeClass('file-drop-toggled');
+  //     $('body').css('overflow', 'hidden');
+  // });
+  // This detects when the file has been dropped, adds the data to the form input and submits it.
 
   $('.file-drop').on('drop', function (e) {
     e.preventDefault();

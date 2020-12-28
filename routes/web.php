@@ -25,14 +25,15 @@ Route::redirect('/', 'upload');
 
 Auth::routes();
 
+Route::get('/settings', [PagesController::class, 'viewSettings']);
+
+
 Route::get('/uploads', [UploadsController::class, 'index']);
 Route::get('/upload', [PagesController::class, 'upload']);
 Route::post('/upload/store', [UploadsController::class, 'store']);
 Route::delete('/upload/delete/{id}', [UploadsController::class, 'delete']);
 Route::get('/s/{slug}', [UploadsController::class, 'view']);
 
-Route::get('/settings', [PagesController::class, 'viewSettings']);
 
 Route::post('api/create', [ApiController::class, 'create']);
 Route::delete('api/delete/{id}', [ApiController::class, 'delete']);
-

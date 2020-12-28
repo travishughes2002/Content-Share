@@ -14,3 +14,7 @@
 
     @include('includes.file-drop')
 @endsection
+
+@section('footer-classes')
+    footer-fixed
+@endsection

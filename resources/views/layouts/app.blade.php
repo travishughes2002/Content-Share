@@ -55,7 +55,7 @@
 
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer @yield('footer-classes')">
         <strong>Copyright &copy; Content Share</strong>
     </footer>
     <!-- /Footer -->

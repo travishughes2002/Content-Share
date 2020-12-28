@@ -43,7 +43,8 @@ class UploadsController extends Controller
      */
     public function store(Request $request)
     {
-        // return dd(request()->all());
+        // dd($request->file('file')->extension());
+        
         // This checks the inputed data to make sure its vaid. It checks if theres been
         // anything inputed then makes sure its an image.
         $validatedData = $request->validate([
@@ -56,7 +57,7 @@ class UploadsController extends Controller
         
         // This creates the database entery.
         Uploads::create([
-            'path_name' => str_replace('public/', '', $filePath),
+            'path_name' => str_replace('public/', $filePath),
             'slug' => Str::random(10),
             'user_id' => auth()->user()->id
         ]);
@@ -74,9 +75,8 @@ class UploadsController extends Controller
     {
         $file = Uploads::where('slug', $slug)->first();
 
-        // return $file;
-
-        return Storage::get($file->path_name);
+        // return Storage::get(storage_path('app/public/') . $file->path_name);
+        return Storage::get(realpath(storage_path('app/public')) . '/' . $file->path_name);
     }
 
 

@@ -11,6 +11,15 @@
     }
 }
 
+.div-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 @mixin pesudo-icon-base {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;    

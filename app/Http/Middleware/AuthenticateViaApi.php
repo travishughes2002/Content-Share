@@ -35,6 +35,6 @@ class AuthenticateViaApi
             }
         }
         
-        return response()->json(['message' => 'unauthorized'. Crypt::encryptString($headerKey), 'status' => '401'], 401);
+        return response()->json(['message' => 'unauthorized', 'status' => '401'], 401);
     }
 }

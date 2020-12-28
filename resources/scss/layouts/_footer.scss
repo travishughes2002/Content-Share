@@ -5,10 +5,10 @@
     strong {
         font-weight: 100;
     }
+}
 
-    @media only screen and (max-height: 101vh) {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }

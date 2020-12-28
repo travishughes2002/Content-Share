@@ -13,14 +13,14 @@
 
 
                     <div class="uploads__item">
-                        <img src="{{ $upload->path_name }}">
+                        <div class="div-img" style="background-image: url('{{'storage/' . $upload->path_name }}')"></div>
                         <div class="uploads__item-overlay">
 
                             <div class="uploads__item-overlay-inner">
                                 <small>some text</small>
                                 <div class="uploads__item-overlay-actions">
-                                    <a href="{{ url($upload->path_name) }}" target="_blank">View</a>
-                                    <a class="clipboard-copy-btn" href="{{ url($upload->path_name) }}">Copy</a>
+                                    <a href="{{ url('storage/' . $upload->path_name) }}" target="_blank">View</a>
+                                    <a class="clipboard-copy-btn" href="{{ url( 's', $upload->slug) }}">Copy</a>
                                     <a href="{{ url('/upload/delete', $upload->id) }}" onclick="event.preventDefault(); document.getElementById('upload-item-{{ $upload->id }}').submit();">Delete</a>
                                     
                                     <form id="upload-item-{{ $upload->id }}" action="{{ url('/upload/delete', $upload->id) }}" method="POST">

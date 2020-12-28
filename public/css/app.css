@@ -13,6 +13,15 @@
   }
 }
 
+.div-img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 * {
   scroll-behavior: smooth;
 }
@@ -253,12 +262,10 @@ table tr td {
   font-weight: 100;
 }
 
-@media only screen and (max-height: 101vh) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .upload {
@@ -288,6 +295,8 @@ table tr td {
 .uploads__item {
   position: relative;
   border: 1px solid lightgray;
+  height: 280px;
+  width: 345px;
 }
 
 .uploads__item:hover .uploads__item-overlay {
