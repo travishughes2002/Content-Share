@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\EndPointsController;
+use App\Http\Controllers\CustomDomainsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/', [EndPointsController::class, 'info']);
 
-Route::post('upload', [EndPointsController::class, 'store']);
+Route::post('upload', [EndPointsController::class, 'storeUpload']);
+
+Route::get('domains', [CustomDomainsController::class, 'index']);
+Route::post('domains/store', [CustomDomainsController::class, 'store']);
+Route::delete('domains/delete/{id}', [CustomDomainsController::class, 'delete']);
+
+// Route::get('domains', function() {
+//     return response()->json(['name' => 'Content Share', 'status' => '200'], 200);
+// });

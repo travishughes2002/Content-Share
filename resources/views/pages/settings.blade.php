@@ -18,6 +18,7 @@
                 <section class="settings-api">
                     <h2>API Keys</h2>
                     <p>You can use the API feature to upload files using an external program (i.e ShareX For example).</p>
+
                     @if (count($apiKeys) > 0)
                         <table cellpadding="0" cellspacing="0">
                             <tr>
@@ -85,6 +86,9 @@
                 <!-- /API Keys -->
 
 
+                <!-- Custom Domain -->
+                <settings-add-domain />
+                <!-- /Custom Domain -->
             </div>
         </div>
     </main>

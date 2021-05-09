@@ -1,15 +1,16 @@
 .settings {
-    // height: 100%;
-
     &__head {
         text-align: center;
         margin-bottom: 1rem;
     }
 
     &__body {
-        width: 100%;
-        background-color: $bg-secondry;
-        border-radius: 5px;
-        padding: 1rem;
+        section {
+            width: 100%;
+            background-color: $bg-secondry;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 }

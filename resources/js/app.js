@@ -1,5 +1,8 @@
-// require('./bootstrap');
+require('./bootstrap');
 
+/**
+ * Jquery
+ */
 $(document).ready(function() {
 
     /*
@@ -55,4 +58,20 @@ $(document).ready(function() {
         $('.msg-box-lg__copy-box-input').select();
         document.execCommand("copy");
     });
+});
+
+
+/**
+ * Vue
+ */
+ window.Vue = require('vue').default;
+// import Vue from 'Vue';
+
+// Register Components
+Vue.component('settings-add-domain', require('./Components/SettingsAddDomain.vue').default);
+Vue.component('notifications', require('./Components/Notifications.vue').default);
+
+// Create App
+const app = new Vue({
+    el: '#app',
 });

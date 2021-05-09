@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function apiKeys() {
         return $this->belongsToMany(ApiKeys::class);
     }
+
+    public function customDomains() {
+        return $this->belongsToMany(CustomDomains::class);
+    }
 }

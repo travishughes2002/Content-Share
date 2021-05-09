@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+    <div id="app">
     <!-- Header-->
     <header class="header">
         <div class="wrapper">
@@ -72,7 +73,10 @@
             @endforeach
         @endif
     </div>
+    {{-- <notifications/> --}}
     <!-- /Notifications-->
+    </div>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

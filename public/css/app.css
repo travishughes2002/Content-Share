@@ -30,7 +30,7 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   color: lightgray;
-  background-image: radial-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.8)), url(/images/hero-background.jpg?536768045dde130fe61cc6de241a6e42);
+  background-image: radial-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.8)), url(/images/hero-background.jpg?de2c8d5434001fb36a5e9e1447ba6060);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -193,8 +193,12 @@ table tr td {
   border-bottom: 1px solid lightgray;
 }
 
+section {
+  box-sizing: border-box;
+}
+
 .header-spacer {
-  height: 9.8vh;
+  height: 86px;
 }
 
 .header {
@@ -374,7 +378,7 @@ table tr td {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: radial-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.8)), url(/images/hero-background.jpg?536768045dde130fe61cc6de241a6e42);
+  background-image: radial-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.8)), url(/images/hero-background.jpg?de2c8d5434001fb36a5e9e1447ba6060);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -434,11 +438,12 @@ table tr td {
   margin-bottom: 1rem;
 }
 
-.settings__body {
+.settings__body section {
   width: 100%;
   background-color: #0d0d0d;
   border-radius: 5px;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .page-not-found {
@@ -496,6 +501,10 @@ table tr td {
 
 .error {
   background-color: #cc2d2f;
+}
+
+.success {
+  background-color: green;
 }
 
 .msg-box-lg {
@@ -605,7 +614,7 @@ table tr td {
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  content: "\F078";
+  content: "";
   margin-left: 0.5rem;
 }
 
@@ -629,7 +638,7 @@ table tr td {
   font-variant: normal;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  content: "\F077";
+  content: "";
   margin-left: 0.5rem;
 }
 
@@ -692,7 +701,7 @@ table tr td {
 }
 
 .btn-primary::after {
-  content: "\F0A9";
+  content: "";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   display: inline-block;
@@ -721,7 +730,7 @@ table tr td {
 }
 
 .btn-secondrey::after {
-  content: "\F0A9";
+  content: "";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   display: inline-block;
@@ -731,4 +740,5 @@ table tr td {
   -webkit-font-smoothing: antialiased;
   padding-left: 0.5rem;
 }
+
 

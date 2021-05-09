@@ -40,7 +40,7 @@ class EndPointsController extends Controller
      * 
      * This stores the submitted file and stores an entery in the database.
      */
-    public function store(Request $request)
+    public function storeUpload(Request $request)
     {
         $userID = null;
 
